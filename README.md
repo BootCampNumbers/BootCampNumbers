@@ -1,13 +1,13 @@
-# Project Name
+# GlassCamp
 
-> Pithy project description
+> Providing Outcomes Transparency for Graduates of Tech Bootcamps
 
 ## Team
 
-  - teamMember
-  - teamMember
-  - teamMember
-  - teamMember
+  - Wes Choi
+  - Sheyda Rezaee
+  - Azmeer Salleh
+  - Kenneth Q. So
 
 ## Table of Contents
 
