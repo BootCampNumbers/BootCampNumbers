@@ -45,7 +45,7 @@ npm run postinstall
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_DOC)
+View the project roadmap [here](https://docs.google.com/document/d/10XqoqrZplTTHVxlhRXYQm8JUfiirXVy7kFKg0jzcc3M/edit?usp=sharing)
 
 
 ## Contributing
