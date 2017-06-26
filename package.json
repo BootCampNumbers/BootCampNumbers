@@ -1,14 +1,15 @@
 {
   "name": "GlassCamp",
-  "version": "0.1",
-  "description": "Providing outcomes transparency for graduates of tech bootcamps",
+  "version": "0.0.1",
+  "description": "Providing outcomes transparency to tech bootcamp graduates",
   "author": "",
-  "license": "MIT",
+  "license": "",
   "engines": {
     "node": ">=6.4.0"
   },
   "scripts": {
-    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash"
+    "postinstall": "curl -s https://raw.githubusercontent.com/campoverde/pomander/master/bin/install | bash",
+    "eslint": "eslint"
   },
   "dependencies": {},
   "devDependencies": {
@@ -19,9 +20,9 @@
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.1",
-    "eslint-plugin-react": "^7.0.1"
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.1.0"
   },
   "babel": {
     "presets": [
