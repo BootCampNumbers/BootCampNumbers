@@ -7,7 +7,9 @@
   "engines": {
     "node": ">=6.4.0"
   },
-  "scripts": {},
+  "scripts": {
+    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash"    
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.7.5",
