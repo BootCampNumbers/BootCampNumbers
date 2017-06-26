@@ -2,8 +2,8 @@
   "name": "GlassCamp",
   "version": "0.0.1",
   "description": "Providing outcomes transparency to tech bootcamp graduates",
-  "author": "",
-  "license": "",
+  "author": "Azmeer Salleh, Kenneth So, Sheyda Rezaee, Wesley Choi",
+  "license": "MIT",
   "engines": {
     "node": ">=6.4.0"
   },
