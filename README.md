@@ -1,6 +1,6 @@
 # GlassCamp
 
-> Providing Outcomes Transparency for Graduates of Tech Bootcamps
+> Providing Outcomes Transparency for Tech Bootcamps Graduates 
 
 ## Team
 
@@ -38,9 +38,9 @@
 From within the root directory:
 
 ```sh
-npm install -g bower
 npm install
-bower install
+npm run postinstall
+
 ```
 
 ### Roadmap
