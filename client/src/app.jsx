@@ -12,6 +12,7 @@ class App extends React.Component {
       <div>
         <h1>Hello World</h1>
         <h2>Goodbye World</h2>
+        <h3>Heroku</h3>
       </div>
     );
   }
