@@ -4,10 +4,10 @@
 
 ## Team
 
-  - Wes Choi
-  - Sheyda Rezaee
   - Azmeer Salleh
   - Kenneth Q. So
+  - Sheyda Rezaee
+  - Wes Choi
 
 ## Table of Contents
 
