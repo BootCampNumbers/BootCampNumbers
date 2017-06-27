@@ -17,7 +17,7 @@
 Use github’s interface to make a fork of the repo, then add that repo as an upstream remote:
 
 ```
-git remote add upstream https://github.com/reactorcore/<NAME_OF_REPO>.git
+git remote add upstream https://github.com/CampoVerde/GlassCamp.git
 ```
 
 ### Cut a namespaced feature branch from master
@@ -54,7 +54,7 @@ changes.
 
 #### Commit Message Guidelines
 
-- Commit messages should be written in the present tense; e.g. "Fix continuous integration script".
+- Commit messages should be written in the present tense; e.g. "fixes continuous integration script".
 - The first line of your commit message should be a brief summary of what the commit changes. Aim for about 70 characters max. Remember: This is a summary, not a detailed description of everything that changed.
 - If you want to explain the commit in more depth, following the first line should be a blank line and then a more detailed description of the commit. This can be as detailed as you want, so dig into details here and keep the first line short.
 
