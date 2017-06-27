@@ -4,10 +4,10 @@
 
 ## Team
 
-  - Wes Choi
-  - Sheyda Rezaee
   - Azmeer Salleh
   - Kenneth Q. So
+  - Sheyda Rezaee
+  - Wes Choi
 
 ## Table of Contents
 
@@ -39,7 +39,7 @@ From within the root directory:
 
 ```sh
 npm install
-npm run postinstall
+npm run pomander
 
 ```
 
