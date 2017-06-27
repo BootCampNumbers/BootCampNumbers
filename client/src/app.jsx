@@ -11,6 +11,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hello World</h1>
+        <h2>Goodbye World</h2>
       </div>
     );
   }
