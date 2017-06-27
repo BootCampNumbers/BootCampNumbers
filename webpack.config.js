@@ -24,7 +24,7 @@ module.exports = {
       {
         test: /\.html$/,
         loaders: ['file-loader?name=[name].[ext]']
-      }      
+      }
     ]
   },
   resolve: {
