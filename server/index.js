@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan-body');
 const cors = require('cors');
 
+const outcomes = require('./routes/outcomes');
+
 // NOTE: This file is to define routes only
 //       any middleware needs to be written in its own module
 //       and required here. Example as follows:
@@ -18,6 +20,8 @@ app.use(bodyParser.json());
 morgan(app);
 
 app.options('*', cors());
+
+app.use('/api/outcomes', outcomes);
 
 app.use(express.static(path.join(__dirname, './../client/dist')));
 
