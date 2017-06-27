@@ -1,7 +1,7 @@
 /* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
+import App from './components/app';
 import './index.html';
 
 ReactDOM.render(<App />, document.getElementById('app'));
