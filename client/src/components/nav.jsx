@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Nav = props =>
+const Nav = () =>
   (
     <div>
       <nav>
@@ -14,4 +13,3 @@ const Nav = props =>
 
 export default Nav;
 
-          // <li><a href="/auth/github">Signup</a></li>

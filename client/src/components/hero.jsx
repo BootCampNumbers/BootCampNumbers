@@ -27,7 +27,7 @@ Hero.propTypes = {
   user: PropTypes.string,
   handleSearch: PropTypes.func,
   bootCamp: PropTypes.string,
-  campus: PropTypes.string,
+  campus: PropTypes.string
 };
 
 export default Hero;
