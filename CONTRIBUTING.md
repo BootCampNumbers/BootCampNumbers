@@ -34,7 +34,7 @@ These commands will help you do this:
 ``` bash
 
 # Creates your branch and brings you there
-git checkout -b `your-branch-name`
+git checkout -b 'your-branch-name'
 ```
 
 ### Make commits to your feature branch. 
