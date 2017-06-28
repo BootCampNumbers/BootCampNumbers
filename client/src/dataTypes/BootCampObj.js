@@ -6,7 +6,7 @@ class BootCampObj {
     this.icon = options.icon;
     this.description = options.description;
     this.address = options.address;
-    this.city = options.city;
+    this.campus = options.campus;
     this.reviews = options.reviews;
     this.createdAt = options.createdAt;
     this.updatedAt = options.updatedAt;

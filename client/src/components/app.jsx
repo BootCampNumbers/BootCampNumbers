@@ -1,5 +1,6 @@
 import React from 'react';
 import Browse from './browse';
+import api from '../../lib/api';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +15,11 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    api.getOutcomes({})
+    .then(outcomes => this.setState({outcomes: outcomes}));
+  }
+  
   handleSearch(e) {
     if (e.target) {
       this.setState({ currentCampus: this.state.currentCampus });
