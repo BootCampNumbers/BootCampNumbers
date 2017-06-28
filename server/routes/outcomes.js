@@ -1,30 +1,36 @@
-// const db = require('../../database/index.js');
+const db = require('../../database/index.js');
+
 const router = require('express').Router();
 
 router.get('/', (req, res, next) => {
-  // console.log('Router GET to homepage works');
   // const options = {
   //   bootcamp : req.query.bootcamp,
   //   campus : req.query.campus
   // };
   // db.getOutcomes(options);
+  // console.log('hello')
   next();
 });
 
-router.get('/api/outcomes/bootcamp/:name', (req, res, next) => {
-  res.send('Router GET to /api/outcomes/bootcamp/:name works');
-  // db.getOutcomes({ bootcamp : req.params.name});
-  next();
+router.get('/bootcamp:bootcamp/campus:campus', (req, res) => {
+  const options = {
+    bootcamp: `${req.params.bootcamp.split('-')[0].slice(1).charAt(0).toUpperCase()}${req.params.bootcamp.split('-')[0].slice(2)} ${req.params.bootcamp.split('-')[1].charAt(0).toUpperCase()}${req.params.bootcamp.split('-')[1].slice(1)}`,
+    campus: `${req.params.campus.split('-')[0].slice(1).charAt(0).toUpperCase()}${req.params.campus.split('-')[0].slice(2)} ${req.params.campus.split('-')[1].charAt(0).toUpperCase()}${req.params.campus.split('-')[1].slice(1)}`,
+  };
+
+  db.outcomes.getOutcomes(options, (results) => {
+    res.send(results);
+  });
+  // res.send(options)
+  // next();
 });
 
-router.get('/api/outcomes/city/:city', (req, res, next) => {
-  console.log('Router GET to /api/outcomes/city/:city works');
+router.get('/campus/:campus', (req, res, next) => {
   // db.getOutcomes({ bootcamp : req.params.city});
   next();
 });
 
-router.get('/api/outcomes/company/:company', (req, res, next) => {
-  console.log('Router GET to /api/outcomes/company/:company works');
+router.get('/company/:company', (req, res, next) => {
   // db.getOutcomes({ bootcamp : req.params.company});
   next();
 });

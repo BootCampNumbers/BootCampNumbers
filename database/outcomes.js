@@ -2,6 +2,7 @@ const db = require('./connection').db;
 const promise = require('bluebird');
 
 // console.log('DB', typeof db.db.query);
+// console.log('loading1');
 
 function getOutcomesByBootcamp(bootcamp, campus) {
   return db.query(`
