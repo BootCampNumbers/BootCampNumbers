@@ -7,7 +7,8 @@ import OutcomeObj from '../src/dataTypes/OutcomeObj';
 const api = {};
 const APP_URL = 'http:127.0.0.1:1337';
 
-api.getOutcomes = () => Promise.resolve(fakeData.outcomes.map(outcome => new OutcomeObj(outcome)));
+api.getOutcomes = () =>
+  Promise.resolve(fakeData.outcomes.map(outcome => new OutcomeObj(outcome)));
 
 
 api.getActualOutcomes = (bootCamp) => {
