@@ -17,9 +17,9 @@ class App extends React.Component {
 
   componentDidMount() {
     api.getOutcomes({})
-    .then(outcomes => this.setState({outcomes: outcomes}));
+    .then(outcomes => this.setState({ outcomes }));
   }
-  
+
   handleSearch(e) {
     if (e.target) {
       this.setState({ currentCampus: this.state.currentCampus });
