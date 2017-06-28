@@ -6,7 +6,9 @@ const passport = require('passport');
 const morgan = require('morgan-body');
 const GitHubStrategy = require('passport-github2').Strategy;
 
-const outcomes = require('./routes/outcomes');
+const outcomes = require('./routes/outcomes.js');
+// const users = require('./routes/users.js');
+// const bootcamps = require('./routes/bootcamps.js');
 
 // NOTE: This file is to define routes only
 //       any middleware needs to be written in its own module
