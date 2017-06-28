@@ -2,11 +2,12 @@ import Promise from 'bluebird';
 import axios from 'axios-es6';
 import qs from 'query-string';
 import fakeData from './fakeData.json';
+import OutcomeObj from '../src/dataTypes/OutcomeObj';
 
 const api = {};
 const APP_URL = 'http:127.0.0.1:1337';
 
-api.getOutcomes = () => Promise.resolve(fakeData.outcomes);
+api.getOutcomes = () => Promise.resolve(fakeData.outcomes.map(outcome => new OutcomeObj(outcome)));
 
 
 api.getActualOutcomes = (bootCamp) => {
