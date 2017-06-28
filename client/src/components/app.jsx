@@ -21,7 +21,9 @@ class App extends React.Component {
 
   getOutcomes(options) {
     api.getOutcomes(options)
-    .then(outcomes => this.setState({ outcomes }).bind(this));
+    .then(outcomes =>
+      this.setState({ outcomes })
+    );
   }
 
   handleSearch(bootCamp, campus) {
