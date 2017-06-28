@@ -6,11 +6,11 @@ class App extends React.Component {
     this.state = {
     };
   }
-
   render() {
     return (
       <div>
         <h1>Hello World</h1>
+        <a href="/auth">Sign in with github</a><br />
       </div>
     );
   }
