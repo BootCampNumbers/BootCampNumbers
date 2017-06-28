@@ -1,5 +1,7 @@
+import Promise from 'bluebird';
 import axios from 'axios-es6';
 import qs from 'query-string';
+import fakeData from './fakeData.json';
 
 const api = {};
 
