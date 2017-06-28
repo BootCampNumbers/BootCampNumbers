@@ -1,10 +1,15 @@
+import Promise from 'bluebird';
 import axios from 'axios-es6';
 import qs from 'query-string';
+import fakeData from './fakeData.json';
 
 const api = {};
 const APP_URL = 'http:127.0.0.1:1337';
 
-api.getOutcomes = (bootCamp) => {
+api.getOutcomes = () => Promise.resolve(fakeData.outcomes);
+
+
+api.getActualOutcomes = (bootCamp) => {
   let qsString = '';
   if (bootCamp.name) {
     const qsOptions = { bootcamp: bootCamp.name };
