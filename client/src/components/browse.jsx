@@ -12,7 +12,7 @@ const Browse = props =>
       <Search
         handleSearch={props.handleSearch}
         bootCamp={props.bootCamp}
-        campuses={props.campuses}
+        campus={props.campus}
       />
       <Outcomes outcomes={props.outcomes} />
     </div>
@@ -22,7 +22,7 @@ Browse.propTypes = {
   user: PropTypes.string,
   handleSearch: PropTypes.func,
   bootCamp: PropTypes.string,
-  campuses: PropTypes.arrayOf(PropTypes.string),
+  campus: PropTypes.string,
   outcomes: PropTypes.arrayOf(PropTypes.instanceOf(OutcomeObj))
 };
 
