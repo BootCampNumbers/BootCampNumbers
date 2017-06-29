@@ -13,8 +13,3 @@ if (!process.env.PG_NO_SSL) {
 }
 
 module.exports.db = pgp(DATABASE_URL);
-
-// const db = pgp('postgres://username:password@host:port/database');
-module.exports.db = pgp('postgres://sheydarezaei:password@localhost/campoverde');
-// console.log("PGP", typeof module.exports.db.query);
-
