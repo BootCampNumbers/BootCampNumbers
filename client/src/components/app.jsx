@@ -1,6 +1,7 @@
 import React from 'react';
 import Browse from './browse';
 import api from '../../lib/api';
+import OutcomeObj from '../dataTypes/OutcomeObj';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class App extends React.Component {
     this.state = {
       currentUser: 'anonymous',
       currentCampus: 'San Francisco',
-      currentBootCamp: 'HackReactor',
+      currentBootCamp: 'Hack Reactor',
       currentCampuses: ['San Francisco', 'Austin', 'New York', 'Los Angeles'],
       bootCamps: [],
       outcomes: []
@@ -16,14 +17,19 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getOutcomes({});
+    this.getOutcomes({
+      name: this.state.currentBootCamp,
+      campus: this.state.currentCampus
+    });
   }
 
   getOutcomes(options) {
     api.getOutcomes(options)
-    .then(outcomes =>
-      this.setState({ outcomes })
-    );
+    .then((outcomes) => {
+      this.setState({
+        outcomes: outcomes.data.map(outcome => new OutcomeObj(outcome))
+      });
+    });
   }
 
   handleSearch(bootCamp, campus) {
