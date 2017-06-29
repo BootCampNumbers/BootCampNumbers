@@ -1,5 +1,4 @@
 const db = require('../../database/index.js');
-
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
