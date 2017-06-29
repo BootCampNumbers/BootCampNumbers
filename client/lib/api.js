@@ -2,7 +2,6 @@ import axios from 'axios-es6';
 import qs from 'query-string';
 
 const api = {};
-const APP_URL = 'http://127.0.0.1:1337';
 
 api.getOutcomes = (bootCamp) => {
   let qString = '';
@@ -12,7 +11,7 @@ api.getOutcomes = (bootCamp) => {
     qString = `?${qs.stringify(qsOptions)}`;
   }
 
-  return axios.get(`${APP_URL}/api/outcomes${qString}`)
+  return axios.get(`/api/outcomes${qString}`)
   /* eslint-disable no-console */
     .catch(err => console.log('ERROR getting outcomes: ', err));
   /* eslint-enable no-console */
