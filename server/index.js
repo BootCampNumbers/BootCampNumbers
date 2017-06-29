@@ -39,6 +39,10 @@ app.use('/api/outcomes', ensureAuthenticated, outcomes);
 app.use(express.static(path.join(__dirname, './../client/dist')));
 
 
+app.use('/api/outcomes', outcomes);
+
+app.use(express.static(path.join(__dirname, './../client/dist')));
+
 /* eslint-disable no-console */
 app.listen(PORT, () =>
   console.log(`GlassCamp server listening on port ${PORT}`));
