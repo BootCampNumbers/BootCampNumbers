@@ -11,7 +11,7 @@ class App extends React.Component {
       <div>
         <h1>Hello World</h1>
         <a href="/auth/github">Sign in with github</a><br />
-        <a href='/logout'>logout</a>
+        <a href="/logout">logout</a>
       </div>
     );
   }
