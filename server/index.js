@@ -25,18 +25,19 @@ const PORT = process.env.PORT || 1337;
 
 const app = express();
 
-app.use(bodyParser.json());
 morgan(app);
 
-app.options('*', cors());
+app.use(bodyParser.json());
+
+app.use('*', cors());
+
+// app.use('/api/auth', auth);
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use('/api/outcomes', outcomes);
 
-// app.use('/api/auth', auth);
-
 app.use(express.static(path.join(__dirname, './../client/dist')));
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 /* eslint-disable no-console */
 app.listen(PORT, () =>
