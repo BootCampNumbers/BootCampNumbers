@@ -12,6 +12,7 @@ module.exports = {
     './node_modules/eslint-config-airbnb/index.js' 
   ],
   rules: {
-    'comma-dangle': 'off'
+    'comma-dangle': 'off',
+    'react/require-default-props': 'off'
   }
 };

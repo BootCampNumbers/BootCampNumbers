@@ -1,0 +1,75 @@
+{
+  "outcomes": [
+    {
+      "id": 235,
+      "bootCampId": 35,
+      "year": 2014,
+      "applicationsSent": 254,
+      "numberOfInterviews": 12,
+      "daysToHire": 3,
+      "offers": [],
+      "createdAt": "2017-06-28T17:40:51.096Z",
+      "updatedAt": "2017-06-28T17:40:51.096Z"
+    },
+    { "id": 5,
+      "bootCampId": 35,
+      "year": 2000,
+      "applicationsSent": 1,
+      "numberOfInterviews": 112,
+      "daysToHire": 4525,
+      "offers": [],
+      "createdAt": "2017-06-28T17:40:51.096Z",
+      "updatedAt": "2017-06-28T17:40:51.096Z"
+    },
+    {
+      "id": 1353,
+      "bootCampId": 12,
+      "year": 2017,
+      "applicationsSent": 4,
+      "numberOfInterviews": 12,
+      "daysToHire": 35,
+      "offers": [],
+      "createdAt": "2017-06-28T17:40:51.096Z",
+      "updatedAt": "2017-06-28T17:40:51.096Z"
+    }
+  ],
+
+  "bootcamps": [
+    {
+      "id": 9,
+      "name": "Hack Reactor",
+      "url": "http://www.hackreactor.com",
+      "icon": "https://static1.squarespace.com/static/ta/522a22cbe4b04681b0bff826/3003/assets/images/logo/hack-reactor-logo.png",
+      "description": "Some crazy place",
+      "address": "944 Market St., SF, CA 94103",
+      "campus": "San Francisco",
+      "reviews": [],
+      "createdAt": "2017-06-28T17:40:51.096Z",
+      "updatedAt": "2017-06-28T17:40:51.096Z"
+    },
+    {
+      "id": 24,
+      "name": "Hack Reactor",
+      "url": "http://www.hackreactor.com",
+      "icon": "https://static1.squarespace.com/static/ta/522a22cbe4b04681b0bff826/3003/assets/images/logo/hack-reactor-logo.png",
+      "description": "Some crazy place",
+      "address": "Austin",
+      "campus": "Austin",
+      "reviews": [],
+      "createdAt": "2017-06-28T17:40:51.096Z",
+      "updatedAt": "2017-06-28T17:40:51.096Z"
+    },
+    {
+      "id": 44,
+      "name": "Hack Reactor",
+      "url": "http://www.hackreactor.com",
+      "icon": "https://static1.squarespace.com/static/ta/522a22cbe4b04681b0bff826/3003/assets/images/logo/hack-reactor-logo.png",
+      "description": "Some crazy place",
+      "address": "NYC",
+      "campus": "New York",
+      "reviews": [],
+      "createdAt": "2017-06-28T17:40:51.096Z",
+      "updatedAt": "2017-06-28T17:40:51.096Z"
+    }
+  ]
+}

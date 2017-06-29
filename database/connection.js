@@ -1,18 +1,15 @@
 const promise = require('bluebird');
 
+const DATABASE_URL = process.env.DATABASE_URL;
+
 const options = {
   promiseLib: promise
 };
 
-  // username: 'kennethso',
-  // host: 'localhost',
-  // database: 'campoverde'
-
-
 const pgp = require('pg-promise')(options);
 
-// TBD: Need to set correct config parameters
+if (!process.env.PG_NO_SSL) {
+  pgp.pg.defaults.ssl = true;
+}
 
-// const db = pgp('postgres://username:password@host:port/database');
-module.exports.db = pgp('postgres://kennethso:password@localhost/campoverde');
-// console.log("PGP", typeof module.exports.db.query);
+module.exports.db = pgp(DATABASE_URL);

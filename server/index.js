@@ -4,7 +4,15 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan-body');
 const cors = require('cors');
 
+// const passport = require('passport');
+// const GitHubStrategy = require('passport-github2').Strategy;
+
 const outcomes = require('./routes/outcomes.js');
+const auth = require('./routes/auth.js');
+
+// const auth = require('./routes/auth.js');
+
+
 // const users = require('./routes/users.js');
 // const bootcamps = require('./routes/bootcamps.js');
 
@@ -18,10 +26,17 @@ const PORT = process.env.PORT || 1337;
 
 const app = express();
 
-app.use(bodyParser.json());
 morgan(app);
 
-app.options('*', cors());
+app.use(bodyParser.json());
+
+app.use('*', cors());
+app.use('/api/outcomes', outcomes);
+app.use('/auth/github/callback', auth);
+
+// app.use('/api/auth', auth);
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use('/api/outcomes', outcomes);
 

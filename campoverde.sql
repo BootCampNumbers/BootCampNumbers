@@ -62,6 +62,7 @@ DROP TABLE IF EXISTS Users;
 CREATE TABLE Users (
   id SERIAL,
   email VARCHAR(30) NOT NULL DEFAULT NULL,
+  github VARCHAR(30) NOT NULL DEFAULT NULL,
   first_name VARCHAR(30) NOT NULL DEFAULT NULL,
   last_name VARCHAR(30) NOT NULL DEFAULT NULL,
   minority BOOLEAN NOT NULL DEFAULT NULL,
@@ -118,6 +119,21 @@ CREATE TABLE Companies (
 );
 
 -- ---
+-- Table 'Sessions'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS Sessions;
+    
+CREATE TABLE Sessions (
+  id SERIAL,
+  user_id INTEGER NOT NULL,
+  access_token VARCHAR(50) NOT NULL DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+
+-- ---
 -- Foreign Keys 
 -- ---
 
@@ -126,6 +142,7 @@ ALTER TABLE Outcomes ADD FOREIGN KEY (bootcamp_id) REFERENCES Bootcamps (id);
 ALTER TABLE Offers ADD FOREIGN KEY (company_id) REFERENCES Companies (id);
 ALTER TABLE Offers ADD FOREIGN KEY (outcome_id) REFERENCES Outcomes (id);
 ALTER TABLE Bootcamps ADD FOREIGN KEY (campus_id) REFERENCES Campuses (id);
+ALTER TABLE Sessions ADD FOREIGN KEY (user_id) REFERENCES Users (id);
 
 -- ---
 -- Table Properties
@@ -142,14 +159,14 @@ ALTER TABLE Bootcamps ADD FOREIGN KEY (campus_id) REFERENCES Campuses (id);
 -- Test Data
 -- ---
 
-INSERT INTO Users (id, email, first_name, last_name, minority, created_at, updated_at) VALUES
-(DEFAULT, 'anastasia.parilla@gmail.com', 'Anastasia', 'Parilla', TRUE, '2017-06-26 15:36:38', '2017-06-26 15:36:38');
-INSERT INTO Users (id, email, first_name, last_name, minority, created_at, updated_at) VALUES
-(DEFAULT, 'leo.grimm@gmail.com', 'Leo', 'Grim', FALSE, '2017-06-26 15:36:38', '2017-06-26 15:36:38');
-INSERT INTO Users (id, email, first_name, last_name, minority, created_at, updated_at) VALUES
-(DEFAULT, 'matthew.chong@gmail.com', 'Matthew', 'Chong', FALSE, '2017-06-26 15:36:38', '2017-06-26 15:36:38');
-INSERT INTO Users (id, email, first_name, last_name, minority, created_at, updated_at) VALUES
-(DEFAULT, 'sarah.hoffman@gmail.com', 'Sarah', 'Hoffman', TRUE, '2017-06-26 15:36:38', '2017-06-26 15:36:38');
+INSERT INTO Users (id, email, github, first_name, last_name, minority, created_at, updated_at) VALUES
+(DEFAULT, 'anastasia.parilla@gmail.com', 'aparilla', 'Anastasia', 'Parilla', TRUE, '2017-06-26 15:36:38', '2017-06-26 15:36:38');
+INSERT INTO Users (id, email, github, first_name, last_name, minority, created_at, updated_at) VALUES
+(DEFAULT, 'leo.grimm@gmail.com', 'leogrim', 'Leo', 'Grim', FALSE, '2017-06-26 15:36:38', '2017-06-26 15:36:38');
+INSERT INTO Users (id, email, github, first_name, last_name, minority, created_at, updated_at) VALUES
+(DEFAULT, 'matthew.chong@gmail.com', 'matthewchong', 'Matthew', 'Chong', FALSE, '2017-06-26 15:36:38', '2017-06-26 15:36:38');
+INSERT INTO Users (id, email, github, first_name, last_name, minority, created_at, updated_at) VALUES
+(DEFAULT, 'sarah.hoffman@gmail.com', 'shoffman', 'Sarah', 'Hoffman', TRUE, '2017-06-26 15:36:38', '2017-06-26 15:36:38');
 
 INSERT INTO Campuses (id, name, created_at, updated_at) VALUES
 (DEFAULT, 'San Francisco', '2017-06-26 15:36:38', '2017-06-26 15:36:38');
