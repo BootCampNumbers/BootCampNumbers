@@ -8,6 +8,7 @@ const cors = require('cors');
 // const GitHubStrategy = require('passport-github2').Strategy;
 
 const outcomes = require('./routes/outcomes.js');
+const auth = require('./routes/auth.js');
 
 // const auth = require('./routes/auth.js');
 
@@ -30,6 +31,8 @@ morgan(app);
 app.use(bodyParser.json());
 
 app.use('*', cors());
+app.use('/api/outcomes', outcomes);
+app.use('/auth/github/callback', auth);
 
 // app.use('/api/auth', auth);
 // app.use(passport.initialize());
