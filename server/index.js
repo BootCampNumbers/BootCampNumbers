@@ -28,7 +28,7 @@ const app = express();
 app.use(bodyParser.json());
 morgan(app);
 
-app.options('*', cors());
+app.use('*', cors());
 
 app.use('/api/outcomes', outcomes);
 
