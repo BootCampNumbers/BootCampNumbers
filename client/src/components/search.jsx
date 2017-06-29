@@ -36,7 +36,6 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <h3> SEARCH VIEW </h3>
         <input
           type="text"
           value={this.state.bootCamp}

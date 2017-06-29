@@ -14,7 +14,7 @@ const Browse = props =>
         bootCamp={props.bootCamp}
         campus={props.campus}
       />
-      <Outcomes outcomes={props.outcomes} />
+      <Outcomes outcomes={props.outcomes} campus={props.campus} />
     </div>
   );
 
