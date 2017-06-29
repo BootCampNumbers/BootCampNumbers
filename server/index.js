@@ -4,7 +4,14 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan-body');
 const cors = require('cors');
 
+// const passport = require('passport');
+// const GitHubStrategy = require('passport-github2').Strategy;
+
 const outcomes = require('./routes/outcomes.js');
+
+// const auth = require('./routes/auth.js');
+
+
 // const users = require('./routes/users.js');
 // const bootcamps = require('./routes/bootcamps.js');
 
@@ -25,7 +32,11 @@ app.options('*', cors());
 
 app.use('/api/outcomes', outcomes);
 
+// app.use('/api/auth', auth);
+
 app.use(express.static(path.join(__dirname, './../client/dist')));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 /* eslint-disable no-console */
 app.listen(PORT, () =>
