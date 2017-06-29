@@ -3,7 +3,7 @@ const promise = require('bluebird');
 
 
 const options = {
-  firstName: 'Shayannn',
+  firstName: 'Shahed',
   lastName: 'Azad', 
   email: 'shayanazad@gmail.com' 
 }

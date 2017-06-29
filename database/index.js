@@ -2,5 +2,5 @@
 //       Example below
 module.exports.outcomes = require('./outcomes');
 
-// module.exports.outcomes = require('./users');
+module.exports.users = require('./users');
 
