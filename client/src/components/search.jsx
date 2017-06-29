@@ -9,6 +9,10 @@ class Search extends React.Component {
       bootCamp: props.bootCamp,
       campus: props.campus
     };
+    this.handleSearch = props.handleSearch;
+    this.handleBootCamp = this.handleBootCamp.bind(this);
+    this.handleCampus = this.handleCampus.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleBootCamp(e) {
@@ -27,10 +31,6 @@ class Search extends React.Component {
 
   handleClick() {
     this.handleSearch(this.state.bootCamp, this.state.campus);
-  }
-
-  handleSearch() {
-    this.props.handleSearch(this.state.bootCamp, this.state.campus);
   }
 
   render() {

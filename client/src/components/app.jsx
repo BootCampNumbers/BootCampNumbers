@@ -14,6 +14,8 @@ class App extends React.Component {
       bootCamps: [],
       outcomes: []
     };
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
   componentDidMount() {
