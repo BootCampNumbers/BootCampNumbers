@@ -10,7 +10,8 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hello World</h1>
-        <a href="/auth">Sign in with github</a><br />
+        <a href="/auth/github">Sign in with github</a><br />
+        <a href='/logout'>logout</a>
       </div>
     );
   }
