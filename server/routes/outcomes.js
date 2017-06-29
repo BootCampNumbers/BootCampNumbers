@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     bootcamp: req.query.bootcamp,
     campus: req.query.campus
   }, (results) => {
-    res.send(results);
+    res.status(200).send(results);
   });
 });
 
