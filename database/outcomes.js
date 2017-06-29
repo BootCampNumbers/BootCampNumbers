@@ -1,9 +1,6 @@
 const db = require('./connection').db;
 const promise = require('bluebird');
 
-// console.log('DB', typeof db.db.query);
-// console.log('loading1');
-
 function getOutcomesByBootcamp(bootcamp, campus) {
   if (!campus) {
     return db.query(`
@@ -62,20 +59,9 @@ function getOutcomes(search, callback) {
       });
       return promise.all(promised).then(results => (
         callback(results)
-        // console.log('OFFERS', results[0].offers);
-        // console.log('COMPANY', results[0].offers[0].company[0]);
       ));
     });
 }
-
-
-const search = {
-  bootcamp: 'Hack Reactor',
-  campus: 'Los Angeles'
-};
-
-getOutcomes(search, results => (console.log('DATABASE', results)));
-
 
 module.exports = {
   getCompanyByOffer,
