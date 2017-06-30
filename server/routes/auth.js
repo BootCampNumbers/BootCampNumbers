@@ -1,4 +1,4 @@
-// const db = require('../../database/index.js');
+const db = require('../../database/index.js').users;
 require('../passportconfig.js');
 const passport = require('passport');
 const router = require('express').Router();
@@ -38,11 +38,22 @@ router.get('/auth/github', passport.authenticate('github'));
 // GitHub will call this URL
 router.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
-  // console.log('user informatation', req.user);
-    res.redirect('/');
+    const options = {
+      firstName: req.user.id,
+      lastName: req.user.id,
+      github: req.user.username
+    };
+    db(options, user => console.log('ADDED TO DATABASE', user));
+    res.redirect(`/?user=${req.user.username}`);
   }
 );
 
 
 module.exports.ensureAuthenticated = ensureAuthenticated;
 module.exports.router = router;
+
+
+    // db(null, () => {
+    //   console.log('req.user')
+    //   res.send(req.user);
+    // });
