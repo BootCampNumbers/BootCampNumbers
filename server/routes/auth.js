@@ -23,6 +23,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
   // </div>`;
   // res.send(indexhtml);
   res.sendFile(path.join(__dirname, '/../../client/dist/index.html'));
+  // res.redirect('/');
 });
 
 
@@ -43,7 +44,7 @@ router.get('/auth/github/callback', passport.authenticate('github', { failureRed
       lastName: req.user.id,
       github: req.user.username
     };
-    db(options);
+    db(options, user => user);
     res.redirect(`/?user=${req.user.username}`);
   }
 );

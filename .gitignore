@@ -25,6 +25,7 @@ coverage
 build/
 
 # editor artifacts
+bundle.js.map
 bundle.js
 *.swp
 *.swo
