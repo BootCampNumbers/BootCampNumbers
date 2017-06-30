@@ -7,13 +7,12 @@ const path = require('path');
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     next();
-  }
-  // const loginhtml = `<div>
+  } else res.sendFile(path.join(__dirname, '/../../client/dist/Login.html'));
+    // const loginhtml = `<div>
   //   <h1>Welcome to Glasscamp</h1>
   //   <div><a href='/auth/github'>Login with Github</a><div>
   // </div>`;
   // res.send(loginhtml);
-  res.sendFile(path.join(__dirname, '/../../client/dist/Login.html'));
 }
 
 router.get('/', ensureAuthenticated, (req, res) => {
@@ -22,8 +21,11 @@ router.get('/', ensureAuthenticated, (req, res) => {
   //   <div><a href='/logout'>Logout</a><div>
   // </div>`;
   // res.send(indexhtml);
-  res.sendFile(path.join(__dirname, '/../../client/dist/index.html'));
+  // res.sendFile(path.join(__dirname, '/../../client/dist/index.html'));
+
+  res.sendFile('/Users/kennethso/Desktop/GlassCamp/client/dist/index.html');
   // res.redirect('/');
+  // res.send('youre in');
 });
 
 
