@@ -2,9 +2,9 @@ const passport = require('passport');
 const GithubStrategy = require('passport-github2').Strategy;
 
 module.exports = passport.use(new GithubStrategy({
-  clientID: 'f0e6736a66174754555f',
-  clientSecret: '468940d22b14d7f6a9cd288cbbf047fba87945f6',
-  callbackURL: 'http://localhost:1337/auth/github/callback'
+  clientID: 'INSERT CLIENT ID',
+  clientSecret: 'INSERT CLIENT SECRET',
+  callbackURL: 'INSERT CALLBACKURL'
 }
 , (accessToken, refreshToken, profile, done) => done(null, profile)
 ));

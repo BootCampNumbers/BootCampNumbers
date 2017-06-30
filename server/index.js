@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 
 app.use('*', cors());
 
-app.use(session({ secret: 'enter custom sessions secret here' }));
+app.use(session({ secret: 'ENTER CUSTOM SESSIONS SECRET (OPTIONAL)' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
