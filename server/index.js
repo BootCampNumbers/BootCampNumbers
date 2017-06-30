@@ -1,20 +1,11 @@
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const bodyParser = require('body-parser');
 const morgan = require('morgan-body');
 const cors = require('cors');
-
-// const passport = require('passport');
-// const GitHubStrategy = require('passport-github2').Strategy;
-
-const outcomes = require('./routes/outcomes.js');
-const auth = require('./routes/auth.js');
-
-// const auth = require('./routes/auth.js');
-
-
-// const users = require('./routes/users.js');
-// const bootcamps = require('./routes/bootcamps.js');
+const passport = require('passport');
+const ensureAuthenticated = require('./routes/auth.js').ensureAuthenticated;
 
 // NOTE: This file is to define routes only
 //       any middleware needs to be written in its own module
@@ -22,8 +13,13 @@ const auth = require('./routes/auth.js');
 // const middleWare = require('./middleware');
 // app.get('/endpoint', middleware.methodName);
 
-const PORT = process.env.PORT || 1337;
+// ROUTES
+const outcomes = require('./routes/outcomes.js');
+const auth = require('./routes/auth.js').router;
+// const users = require('./routes/users.js');
+// const bootcamps = require('./routes/bootcamps.js');
 
+const PORT = process.env.PORT || 1337;
 const app = express();
 
 morgan(app);
@@ -31,16 +27,17 @@ morgan(app);
 app.use(bodyParser.json());
 
 app.use('*', cors());
-app.use('/api/outcomes', outcomes);
-app.use('/auth/github/callback', auth);
 
-// app.use('/api/auth', auth);
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({ secret: 'ENTER CUSTOM SESSIONS SECRET (OPTIONAL)' }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use('/api/outcomes', outcomes);
+app.use('/', auth);
+app.use('/api/outcomes', ensureAuthenticated, outcomes);
+
 
 app.use(express.static(path.join(__dirname, './../client/dist')));
+
 
 /* eslint-disable no-console */
 app.listen(PORT, () =>
