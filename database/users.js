@@ -17,13 +17,4 @@ function setUser(options, callback) {
       });
 }
 
-
-// const options = {
-//   firstName: 'JKennehs',
-//   lastName: 'Azfsdfds',
-//   email: 'shay423444dfdfsdzad@gmail.com'
-// };
-
-// setUser(options, user => (console.log('DARABASE addUser', user)));
-
 module.exports = setUser;

@@ -9,11 +9,6 @@ module.exports = passport.use(new GithubStrategy({
 , (accessToken, refreshToken, profile, done) => done(null, profile)
 ));
 
-// var session = require('express-session');
-// app.use(session({secret: "enter custom sessions secret here"}));
-// app.use(passport.initialize());
-// app.use(passport.session());
-
 passport.serializeUser((user, done) => {
   // placeholder for custom user serialization
   // null is for errors

@@ -32,7 +32,7 @@ app.use(session({ secret: 'enter custom sessions secret here' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', ensureAuthenticated, auth);
+app.use('/', auth);
 app.use('/api/outcomes', ensureAuthenticated, outcomes);
 
 
