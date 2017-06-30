@@ -7,7 +7,9 @@ const path = require('path');
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     next();
-  } else res.sendFile(path.join(__dirname, '/../../client/dist/Login.html'));
+  } else {
+    res.sendFile(path.join(__dirname, '/../../client/dist/Login.html'));
+  }
     // const loginhtml = `<div>
   //   <h1>Welcome to Glasscamp</h1>
   //   <div><a href='/auth/github'>Login with Github</a><div>
@@ -21,11 +23,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
   //   <div><a href='/logout'>Logout</a><div>
   // </div>`;
   // res.send(indexhtml);
-  // res.sendFile(path.join(__dirname, '/../../client/dist/index.html'));
-
-  res.sendFile('/Users/kennethso/Desktop/GlassCamp/client/dist/index.html');
-  // res.redirect('/');
-  // res.send('youre in');
+  res.sendFile(path.join(__dirname, '/../../client/dist/index.html'));
 });
 
 
