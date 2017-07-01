@@ -35,7 +35,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <form className="search">
+      <div className="search">
         <input
           className="searchquery"
           size="40"
@@ -54,8 +54,8 @@ class Search extends React.Component {
           onChange={this.handleCampus}
           onKeyUp={this.handleCampus}
         />
-        <button value="S" onClick={this.handleClick}>S</button>
-      </form>
+        <button value=">" onClick={this.handleClick}>&gt;</button>
+      </div>
     );
   }
 }

@@ -7,13 +7,6 @@ const cors = require('cors');
 const passport = require('passport');
 const ensureAuthenticated = require('./routes/auth.js').ensureAuthenticated;
 
-// NOTE: This file is to define routes only
-//       any middleware needs to be written in its own module
-//       and required here. Example as follows:
-// const middleWare = require('./middleware');
-// app.get('/endpoint', middleware.methodName);
-
-// ROUTES
 const outcomes = require('./routes/outcomes.js');
 const auth = require('./routes/auth.js').router;
 // const users = require('./routes/users.js');
@@ -34,12 +27,6 @@ app.use(passport.session());
 
 app.use('/', auth);
 app.use('/api/outcomes', ensureAuthenticated, outcomes);
-
-
-app.use(express.static(path.join(__dirname, './../client/dist')));
-
-
-app.use('/api/outcomes', outcomes);
 
 app.use(express.static(path.join(__dirname, './../client/dist')));
 

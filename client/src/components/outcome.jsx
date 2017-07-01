@@ -65,7 +65,7 @@ class Outcome extends React.Component {
             <h4 className="value">{this.state.year}</h4>
           </div>
           <div className="key">
-            <h3 className="heading">Campus</h3>
+            <h3 className="heading">{this.state.campus ? 'Campus' : ''}</h3>
             <h4 className="value">{abbreviate(this.state.campus)}</h4>
           </div>
         </div>
