@@ -12,8 +12,8 @@ const Outcomes = props =>
   );
 
 Outcomes.propTypes = {
-  outcomes: PropTypes.arrayOf(PropTypes.instanceOf(OutcomeObj)),
-  campus: PropTypes.string
+  campus: PropTypes.string,
+  outcomes: PropTypes.arrayOf(PropTypes.instanceOf(OutcomeObj))
 };
 
 export default Outcomes;

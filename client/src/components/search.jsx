@@ -35,14 +35,27 @@ class Search extends React.Component {
 
   render() {
     return (
-
-    <form className="search">
-      <input className="searchquery" size="40" type="text" name="bootcamp" value={this.state.bootCamp} onChange={this.handleBootCamp} onKeyUp={this.handleBootCamp} />
-      <input className="searchquery" size="40" type="text" name="campus" value={this.state.campus} onChange={this.handleCampus} onKeyUp={this.handleCampus}/>
-      <button value="S" onClick={this.handleClick}>S</button>
-    </form>
-
-      
+      <div className="search">
+        <input
+          className="searchquery"
+          size="40"
+          type="text"
+          name="bootcamp"
+          value={this.state.bootCamp}
+          onChange={this.handleBootCamp}
+          onKeyUp={this.handleBootCamp}
+        />
+        <input
+          className="searchquery"
+          size="40"
+          type="text"
+          name="campus"
+          value={this.state.campus}
+          onChange={this.handleCampus}
+          onKeyUp={this.handleCampus}
+        />
+        <button value=">" onClick={this.handleClick}>&gt;</button>
+      </div>
     );
   }
 }
@@ -54,29 +67,3 @@ Search.propTypes = {
 };
 
 export default Search;
-
-/*
-
-
-<input className="searchquery" size="40" type="text" name="bootcamp" placeholder="   Search by Bootcamp..." />
-      <input className="searchquery" size="40" type="text" name="campus" placeholder="   Search Campus..." />
-           <input type="submit" value="S" onClick={this.handleClick} />
-
-
-<div>
-        <input
-          value={this.state.bootCamp}
-          onChange={this.handleBootCamp}
-          onKeyUp={this.handleBootCamp}
-        />
-        <input
-          value={this.state.campus}
-          onChange={this.handleCampus}
-          onKeyUp={this.handleCampus}
-        />
-        <button
-          onClick={this.handleClick}
-        > GO! </button>
-      </div>
-
-      */
