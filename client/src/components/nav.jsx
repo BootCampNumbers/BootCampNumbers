@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 const Nav = props =>
   (
     <div>
-      <h1>Search Salaries and Outcomes</h1>
-      {props.user}
+      <nav>
+        <ul>
+          <li><a href="/js/">Post an Outcome</a></li>
+        </ul>
+      </nav>
     </div>
   );
 
-Nav.propTypes = {
-  user: PropTypes.string
-};
-
 export default Nav;
+
+          // <li><a href="/auth/github">Signup</a></li>

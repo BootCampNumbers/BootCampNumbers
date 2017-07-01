@@ -27,15 +27,27 @@ class Outcome extends React.Component {
     this.state.minority = props.outcome.minority;
   }
 
+  abbreviate(city) {
+    if (city === 'San Francisco') return 'SF';
+    return city;
+  }
+
+  funcnumberWithCommas(x) {
+    const parts = x.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const withZeroes = `$${parts.join('.')}`;
+    return withZeroes.slice(0, 4) + 'K';
+  }
+
   render() {
     return (
       <div className="outcome">
 
         <div className="leftside">
-          <div className="compLogo">
+          <div className="compLogo left">
             <img className="logo" src={this.state.icon} alt={this.state.company}/>
           </div>
-          <div className="desc">
+          <div className="desc left">
             <h6 className="company">{this.state.position}</h6>
             <h6 className="offers">Offers: {this.state.companies}</h6>
             <h6 className="offers">{this.state.applications} applications sent • {this.state.monthsToHire} months to hire</h6>
@@ -46,7 +58,7 @@ class Outcome extends React.Component {
         <div className="rightside">
           <div className="key">
             <h3 className="heading">Salary</h3>
-            <h4 className="value">$110K</h4>
+            <h4 className="value">{this.funcnumberWithCommas(this.state.salary)}</h4>
           </div>
           <div className="key">
             <h3 className="heading">Year</h3>
@@ -54,7 +66,7 @@ class Outcome extends React.Component {
           </div>
           <div className="key">
             <h3 className="heading">Campus</h3>
-            <h4 className="value">SF</h4>
+            <h4 className="value">{this.abbreviate(this.state.campus)}</h4>
           </div>
          </div>
 
