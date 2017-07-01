@@ -11,7 +11,6 @@ class App extends React.Component {
       currentUser: 'anonymous',
       currentCampus: 'San Francisco',
       currentBootCamp: 'Hack Reactor',
-      currentCampuses: ['San Francisco', 'Austin', 'New York', 'Los Angeles'],
       bootCamps: [],
       outcomes: []
     };
@@ -73,7 +72,6 @@ class App extends React.Component {
           handleLogin={this.handleLogin}
           bootCamp={this.state.currentBootCamp}
           campus={this.state.currentCampus}
-          campuses={this.state.currentCampuses}
           outcomes={this.state.outcomes}
         />
       </div>
