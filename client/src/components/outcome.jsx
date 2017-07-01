@@ -27,13 +27,14 @@ class Outcome extends React.Component {
     super(props);
     this.state = {};
     this.state.takenOffer = props.outcome.offers.find(offer => offer.taken);
-    this.state.company = this.state.takenOffer.company.name;
+    this.state.company = this.state.takenOffer.company[0].name;
     this.state.position = this.state.takenOffer.position;
     this.state.salary = this.state.takenOffer.salary;
     this.state.icon = this.state.takenOffer.company[0].icon_link;
     this.state.year = `'${props.outcome.year % 2000}`;
     this.state.campus = props.campus;
-    this.state.companies = props.outcome.offers.map(offer => offer.company.name);
+    this.state.companies =
+      props.outcome.offers.map(offer => offer.company[0].name).join(', ');
     this.state.monthsToHire = props.outcome.monthsToHire;
     this.state.applications = props.outcome.applicationsSent;
     this.state.minority = props.outcome.minority;
@@ -47,7 +48,7 @@ class Outcome extends React.Component {
             <img className="logo" src={this.state.icon} alt={this.state.company} />
           </div>
           <div className="desc left">
-            <h6 className="company">{this.state.position}</h6>
+            <h6 className="company">{this.state.position}, {this.state.company}</h6>
             <h6 className="offers">Offers: {this.state.companies}</h6>
             <h6 className="offers">
               {this.state.applications} applications sent • {this.state.monthsToHire} months to hire
