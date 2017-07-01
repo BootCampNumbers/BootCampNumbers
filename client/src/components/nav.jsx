@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Nav = props =>
+const Nav = () =>
   (
     <div>
       <nav>
         <ul>
-          <li><a href="/js/">Post an Outcome</a></li>
+          <li><a href="">Post an Outcome</a></li>
+          <li><a href="/logout">Log Out</a></li>
         </ul>
       </nav>
     </div>
@@ -14,4 +14,3 @@ const Nav = props =>
 
 export default Nav;
 
-          // <li><a href="/auth/github">Signup</a></li>
