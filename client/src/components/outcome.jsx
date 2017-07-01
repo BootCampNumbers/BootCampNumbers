@@ -27,21 +27,49 @@ class Outcome extends React.Component {
     this.state.minority = props.outcome.minority;
   }
 
+  abbreviate(city) {
+    if (city === 'San Francisco') return 'SF';
+    return city;
+  }
+
+  funcnumberWithCommas(x) {
+    const parts = x.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const withZeroes = `$${parts.join('.')}`;
+    return withZeroes.slice(0, 4) + 'K';
+  }
+
   render() {
     return (
-      <div>
-        <img src={this.state.icon} alt={this.state.company} />
-        <span>{this.state.position}</span>
-        <span>Offers: {this.state.companies}</span>
-        <span>{this.state.applications} applications sent </span>
-        <span>{this.state.monthsToHire} months to hire </span>
-        <span>{this.state.minority ? 'Under-Represented Minority' : ''}</span>
-        <span>Salary</span>
-        <span>{this.state.salary}</span>
-        <span>Year</span>
-        <span>{this.state.year}</span>
-        <span>Campus</span>
-        <span>{this.state.campus}</span>
+      <div className="outcome">
+
+        <div className="leftside">
+          <div className="compLogo left">
+            <img className="logo" src={this.state.icon} alt={this.state.company}/>
+          </div>
+          <div className="desc left">
+            <h6 className="company">{this.state.position}</h6>
+            <h6 className="offers">Offers: {this.state.companies}</h6>
+            <h6 className="offers">{this.state.applications} applications sent • {this.state.monthsToHire} months to hire</h6>
+            <h6 className="under">{this.state.minority ? 'Under-Represented Minority' : ''}</h6>
+          </div>
+        </div>
+
+        <div className="rightside">
+          <div className="key">
+            <h3 className="heading">Salary</h3>
+            <h4 className="value">{this.funcnumberWithCommas(this.state.salary)}</h4>
+          </div>
+          <div className="key">
+            <h3 className="heading">Year</h3>
+            <h4 className="value">{this.state.year}</h4>
+          </div>
+          <div className="key">
+            <h3 className="heading">Campus</h3>
+            <h4 className="value">{this.abbreviate(this.state.campus)}</h4>
+          </div>
+         </div>
+
       </div>
     );
   }
@@ -53,3 +81,54 @@ Outcome.propTypes = {
 };
 
 export default Outcome;
+
+
+      // <div>
+      //   <img src={this.state.icon} alt={this.state.company} />
+      //   <span>{this.state.position}</span>
+      //   <span>Offers: {this.state.companies}</span>
+      //   <span>{this.state.applications} applications sent </span>
+      //   <span>{this.state.monthsToHire} months to hire </span>
+      //   <span>{this.state.minority ? 'Under-Represented Minority' : ''}</span>
+      //   <span>Salary</span>
+      //   <span>{this.state.salary}</span>
+      //   <span>Year</span>
+      //   <span>{this.state.year}</span>
+      //   <span>Campus</span>
+      //   <span>{this.state.campus}</span>
+      // </div>
+
+
+
+
+
+      // <div class="outcome">
+
+      //   <div class="leftside">
+      //     <div class="comp-logo">
+      //       <img class="logo" src="http://www.greenmedinfo.com/sites/all/themes/wilderness/images-upgrade/Google_icon_2015.png" />
+      //     </div>
+      //     <div class="desc">
+      //       <h6 class="company">Google, Software Engineer</h6>
+      //       <h6 class="offers">Offers from: Facebook, Lyft, Strype, Dropbox, Airbnb, Yelp</h6>
+      //       <h6 class="offers">23 Applications sent • 6 months to hire</h6>
+      //       <h6 class="under">Under-Represented Minority</h6>
+      //     </div>
+      //   </div>
+
+      //   <div class="rightside">
+      //     <div class="key-details">
+      //       <h3 class="heading">Salary</h3>
+      //       <h4 class="value">$110K</h4>
+      //     </div>
+      //     <div class="key-details">
+      //       <h3 class="heading">Year</h3>
+      //       <h4 class="value">'16</h4>
+      //     </div>
+      //     <div class="key-details">
+      //       <h3 class="heading">Campus</h3>
+      //       <h4 class="value">SF</h4>
+      //     </div>
+      //    </div>
+         
+      // </div>
