@@ -50,6 +50,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <div>
       <Browse
         user={this.state.currentUser}
         handleSearch={this.handleSearch}
@@ -59,6 +60,7 @@ class App extends React.Component {
         campuses={this.state.currentCampuses}
         outcomes={this.state.outcomes}
       />
+      </div>
     );
   }
 }
