@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import React from 'react';
 import Browse from './browse';
 import api from '../../lib/api';
@@ -19,10 +20,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.getUser();
     this.getOutcomes({
       name: this.state.currentBootCamp,
       campus: this.state.currentCampus
     });
+  }
+
+  getUser() {
+    const url = new URL(window.location);
+    const params = new URLSearchParams(url.search.slice(1));
+    if (params.has('user')) {
+      this.setState({
+        currentUser: params.get('user')
+      });
+    } else {
+      /* eslint-disable no-console */
+      console.log('ERROR - user should be set in query string');
+      /* eslint-enable no-console */
+    }
   }
 
   getOutcomes(options) {
@@ -51,15 +67,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <Browse
-        user={this.state.currentUser}
-        handleSearch={this.handleSearch}
-        handleLogin={this.handleLogin}
-        bootCamp={this.state.currentBootCamp}
-        campus={this.state.currentCampus}
-        campuses={this.state.currentCampuses}
-        outcomes={this.state.outcomes}
-      />
+        <Browse
+          user={this.state.currentUser}
+          handleSearch={this.handleSearch}
+          handleLogin={this.handleLogin}
+          bootCamp={this.state.currentBootCamp}
+          campus={this.state.currentCampus}
+          campuses={this.state.currentCampuses}
+          outcomes={this.state.outcomes}
+        />
       </div>
     );
   }

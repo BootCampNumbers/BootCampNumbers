@@ -35,8 +35,7 @@ nav {
 }
 
 nav ul {
-/*  opacity: 0.6;
-*/  margin: 0;
+  margin: 0;
   padding: 0;
   line-height: 6em;
   margin-left: 33px;
@@ -51,10 +50,6 @@ nav ul li:first-child {
 nav ul li:second-child {
   margin-left: auto;
 }
-
-/*nav ul li:third-child {
-  margin-left: auto;
-}*/
 
 a:link {
   text-shadow: 1px 1px 10px black;
@@ -79,7 +74,7 @@ li {
   height: 350px;
 }
 
-form {
+.search {
   margin-top: 50px;
   text-align: center;
 }
@@ -103,18 +98,6 @@ button {
   background-color: #00a2e1;
 }
 
-/*input[type=submit] {
-  font-family: 'Montserrat', sans-serif;
-  padding: 5px 15px;
-  background: #ccc;
-  border: 0 none;
-  cursor: pointer;
-
-  width: 45px;
-  height: 45px;
-  background-color: #00a2e1;
-}*/
-
 .left {
   display: inline-block;
 }
@@ -124,10 +107,8 @@ button {
   height: 270px;
   display: block;
   margin-bottom: 4px;
-  /*display: inline;*/
   border: 1px Gainsboro solid;
 }
-
 
 .comp-logo {
   height: 170px;
@@ -155,12 +136,9 @@ button {
   float: left
 }
 
-
 .rightside {
   float: right;
   margin-top: 70px;
-  /*margin-right: 70px;*/
-  /*display: inline-block;*/
 }
 
 .company {
@@ -174,7 +152,6 @@ button {
   margin-bottom: 25px;
   height: 70px;
 }
-
 
 .value {
   font-family: 'Montserrat', sans-serif;
@@ -194,8 +171,6 @@ button {
   font-size: 15px;
   font-weight: 300;
 }
-
-
 
 .under {
   font-family: 'Montserrat', sans-serif;
