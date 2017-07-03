@@ -11,8 +11,8 @@ const Hero = props =>
     <div className="hero">
       <Nav />
       <h5>glasscamp</h5>
-      <h1>Search Salaries and Outcomes</h1>
       <h1 className="greeting">{filterName(props.user)}</h1>
+      <h1>Search Salaries and Outcomes</h1>
       <Search
         handleSearch={props.handleSearch}
         bootCamp={props.bootCamp}
