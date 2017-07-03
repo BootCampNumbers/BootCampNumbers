@@ -54,7 +54,7 @@ class Search extends React.Component {
           onChange={this.handleCampus}
           onKeyUp={this.handleCampus}
         />
-        <button value=">" onClick={this.handleClick}>&gt;</button>
+        <button value=">" onClick={this.handleClick}>→</button>
       </div>
     );
   }
