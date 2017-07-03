@@ -32,7 +32,7 @@ class Outcome extends React.Component {
     this.state.salary = this.state.takenOffer.salary;
     this.state.icon = this.state.takenOffer.company[0].icon_link;
     this.state.year = `'${props.outcome.year % 2000}`;
-    this.state.campus = props.campus;
+    this.state.campus = props.outcome.campus;
     this.state.companies =
       props.outcome.offers.map(offer => offer.company[0].name).join(', ');
     this.state.monthsToHire = props.outcome.monthsToHire;

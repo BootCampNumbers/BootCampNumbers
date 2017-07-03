@@ -2,8 +2,9 @@ const db = require('./connection').db;
 const promise = require('bluebird');
 
 function getOutcomesByBootcamp(bootcamp, campus) {
-  if (!campus) {
-    return db.query(`
+  const campusSubQuery = (campus) ?
+    `AND bootcamps.campus_id = (SELECT id from campuses WHERE campuses.name = '${campus}')` : '';
+  return db.query(`
     SELECT *
       FROM users 
         INNER JOIN outcomes 
@@ -11,21 +12,9 @@ function getOutcomesByBootcamp(bootcamp, campus) {
         WHERE 
           outcomes.bootcamp_id in (
           SELECT bootcamps.id from bootcamps 
-            WHERE bootcamps.name = $1
+            WHERE bootcamps.name = $1 ${campusSubQuery}
             )`, [bootcamp]);
-  }
-  return db.query(`
-      SELECT *
-        FROM users 
-          INNER JOIN outcomes 
-            ON users.id = outcomes.user_id
-          WHERE 
-            outcomes.bootcamp_id in (
-            SELECT bootcamps.id from bootcamps 
-              WHERE bootcamps.name = $1 AND bootcamps.campus_id = (SELECT id from campuses WHERE campuses.name = $2)
-              )`, [bootcamp, campus]);
 }
-
 
 function getCompanyByOffer(offer) {
   return db.query('SELECT * FROM companies WHERE id = $1', [offer.company_id]);
@@ -46,8 +35,23 @@ function getOffers(outcome) {
     });
 }
 
+function setCampus(outcome) {
+  return db.query(`SELECT campuses.name 
+        FROM campuses WHERE 
+          campuses.id IN 
+             (SELECT campus_id FROM bootcamps 
+                WHERE bootcamps.id = ${outcome.bootcamp_id})`)
+  .then((queryResult) => {
+    const decorated = outcome;
+    decorated.campus = queryResult[0].name;
+    return promise.resolve(decorated);
+  });
+}
+
 function getOutcomes(search, callback) {
   getOutcomesByBootcamp(search.bootcamp, search.campus)
+    .then(outcomes =>
+          promise.map(outcomes, outcome => setCampus(outcome)))
     .then((outcomes) => {
       const promised = outcomes.map((outcome) => {
         const outcomeWithOffers = outcome;
