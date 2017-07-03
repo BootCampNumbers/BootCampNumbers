@@ -86,6 +86,7 @@ function setBootcamp(bootcampName, campusName) {
   `, [bootcampName, campusName]);
 }
 */
+/*
 const sampleOffer = {
   email: 'anastasia.parilla@gmail.com',
   bootcampName: 'Hack Reactor',
@@ -95,7 +96,7 @@ const sampleOffer = {
   position: 'Sofware Engineer',
   taken: false
 };
-
+*/
 function setOffer(options) {
   return db.query(`INSERT INTO offers
     (id, salary, position, taken, company_id, outcome_id, created_at, updated_at) VALUES
@@ -146,7 +147,7 @@ function setOutcome(options) {
 }
 */
 
-setOffer(sampleOffer);
+// setOffer(sampleOffer);
 // setCampus('Chicago');
 // setBootcamp('App Academy', 'San Francisco');
 // setOutcome(sampleOutcome);
