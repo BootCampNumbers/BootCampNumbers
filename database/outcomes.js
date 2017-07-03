@@ -155,6 +155,6 @@ function setOutcome(options) {
 module.exports = {
   getCompanyByOffer,
   getOffers,
-  getOutcomes, 
+  getOutcomes,
   setOffer
 };
