@@ -3,6 +3,7 @@ class OutcomeObj {
     this.id = options.user_id;
     this.year = options.year;
     this.email = options.email;
+    this.campus = options.campus;
     this.firstName = options.first_name;
     this.lastName = options.last_name;
     this.minority = options.minority;
