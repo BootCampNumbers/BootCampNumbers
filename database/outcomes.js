@@ -63,7 +63,7 @@ function getOutcomes(search, callback) {
     });
 }
 
-/*
+
 function setCampus(campusName) {
   return db.query('SELECT * from campuses WHERE campuses.name = $1', [campusName])
     .then((result) => {
@@ -76,8 +76,8 @@ function setCampus(campusName) {
       return result;
     });
 }
-*/
-/*
+
+
 function setBootcamp(bootcampName, campusName) {
   return db.query(`INSERT INTO bootcamps(id, name, campus_id, created_at, updated_at) VALUES
     (DEFAULT, $1,
@@ -85,7 +85,7 @@ function setBootcamp(bootcampName, campusName) {
     '2017-06-26 15:36:38', '2017-06-26 15:36:38') RETURNING id
   `, [bootcampName, campusName]);
 }
-*/
+
 /*
 const sampleOffer = {
   email: 'anastasia.parilla@gmail.com',
@@ -148,13 +148,15 @@ function setOutcome(options) {
 */
 
 // setOffer(sampleOffer);
-// setCampus('Chicago');
-// setBootcamp('App Academy', 'San Francisco');
+// setCampus('Las Vegas');
+// setBootcamp('App Academy', 'Las Vegas');
 // setOutcome(sampleOutcome);
 
 module.exports = {
   getCompanyByOffer,
   getOffers,
   getOutcomes,
-  setOffer
+  setOffer,
+  setCampus,
+  setBootcamp
 };
