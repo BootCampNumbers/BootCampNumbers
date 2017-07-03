@@ -23,7 +23,10 @@ coverage
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
-dist/
+
+# Build artifacts
+bundle.js
+bundle.js.map
 
 # editor artifacts
 *.swp
